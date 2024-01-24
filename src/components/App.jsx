@@ -28,7 +28,7 @@ export const App = () => {
   //   };
   //   fetchData();
   // }, []);
-  
+
   useEffect(() => {
     const fetchData = async () => {
       if (!search) return;

@@ -8,7 +8,11 @@ const modalRoot = document.getElementById('modal-root');
 export const Modal = ({ close, children }) => {
   useEffect(() => {
     window.addEventListener('keydown', closeModal);
-    return () => window.removeEventListener('keydown', closeModal);
+    document.body.classList.add(css.scroll);
+    return () => {
+      window.removeEventListener('keydown', closeModal);
+      document.body.classList.remove(css.scroll);
+    };
   });
 
   function closeModal({ target, currentTarget, code }) {
